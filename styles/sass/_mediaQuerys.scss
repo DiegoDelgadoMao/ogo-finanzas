@@ -1,0 +1,34 @@
+
+@media (min-width: 600px){
+	html{
+		font-size: 66%;
+	}
+	header{
+		margin-bottom: 90px;
+		.intro-ogo{
+			width: 100%;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			place-items: center;
+			img{
+				display: block;
+				width: 300px;
+			}
+		}
+	}
+}
+
+@media (min-width: 900px){
+	html{
+		font-size: 72%;
+	}
+	.intro-ogo{
+		width: 90%;
+		max-width: 1130px;
+		margin: auto;
+	}
+	header .intro-ogo img{
+		width: 400px;
+	}
+}
+

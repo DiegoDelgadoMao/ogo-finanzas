@@ -1,0 +1,116 @@
+.contenedor-datos{
+	width: 100%;
+	max-width: 500px;
+	margin: auto;
+	height: auto;
+	display: flex;
+	&__pasos{
+		width: 16%;
+		position: relative;
+		.paso{
+			width: 3rem;
+			height: 3rem;
+			background: $cuarto-color;
+			border-radius: 50%;
+			display: grid;
+			place-content: center;
+			border: 1px solid $primer-color;
+			margin: auto;
+			z-index: 2;
+			position: relative;
+			span{
+				font-size: 2.4rem;
+				font-weight: 800;
+				color: $segundo-color;
+				-webkit-text-stroke: 1px $primer-color
+			}
+		}
+	}
+	&__pasos::before{
+		content: ' ';
+		width: 0.1rem;
+		height: 100%;
+		background: $primer-color;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		z-index: 1;
+	}
+	.contenedor-datos__tabla{
+		padding: 0px 10px 30px 10px;
+		h2{
+			font-size: 1.5rem;
+			font-weight: 400;
+			margin-bottom: 20px;
+		}
+	}
+	.contendor-tabla{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.contenedor-tabla__plus{
+			cursor: pointer;
+			width: 3rem;
+			height: 3rem;
+			border: none;
+			background: $primer-color;
+			border-radius: 50%;
+			display: grid;
+			place-content: center;
+			.bx-list-plus{
+				font-size: 2rem;
+				color: $cuarto-color
+			}
+		}
+	}
+	.tabla{
+		width: 80%;
+		display: grid;
+		grid-template-columns: repeat(2,minmax(100px,1fr));
+		grid-auto-rows: 40px;
+		&__celda{
+			width: 100%;
+			height: 100%;
+			background: $segundo-color;
+			border: 1px solid $primer-color;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			p{
+				font-size: 1.4rem;
+				font-weight: 600;
+				outline: none;
+			}
+		}
+	}
+	.contenedor-subtabla{
+		@extend .contendor-tabla;
+		.subtabla{
+			@extend .tabla;
+			&__celda{
+				@extend .tabla__celda;
+			}
+			input{
+				width: 80%;
+				display: block;
+				height: 20px;
+				border: none;
+				background: transparent;
+				padding: 0px 4px;
+				outline: none;
+			}
+			input::placeholder{
+				color: #555
+			}
+		}
+		.contenedor-subtabla__delet{
+			@extend .contenedor-tabla__plus;
+			.bx{
+				font-size: 2rem;
+				color: $cuarto-color
+			}
+		}
+	}
+}

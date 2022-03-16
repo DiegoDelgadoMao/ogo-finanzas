@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./styles/styles.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,	800;0,900;1,100&display=swap"
+			rel="stylesheet">
+		<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+		<title>Ogo | cambia tu realidad financiera</title>
+	</head>
+	<body>
+		<header>
+			<a href="./index.html">
+				<img class="logo-ogo" src="./assets/logo-ogo.png" alt="logo de ogo">
+			</a>
+			<div class="intro-ogo">
+				<h1 class="intro-ogo__p">Con Ogo podras ver tu realidad financiera. solo tienes que ingresar
+					datos simples como: cuanto ganas y cuanto gastas. Luego Ogo hara el resto por ti.</h1>
+				<img src="./assets/imagen-header.png" alt="">
+			</div>
+		</header>
+		<main>
+			<div class="intro-pasos">
+				<section class="contenedor-datos">
+					<div class="contenedor-datos__pasos">
+						<div class="paso">
+							<span>1</span>
+						</div>
+					</div>
+					<div id="contenedor-tablas-ingresos" class="contenedor-datos__tabla">
+						<h2>Aquí puedes poner cuales son tus ingresos al mes:</h2>
+						<div class="contendor-tabla">
+							<div class="tabla">
+								<div class="tabla__celda">
+									<p>Ingreso neto</p>
+								</div>
+								<div class="tabla__celda">
+									<p>Monto</p>
+								</div>
+							</div>
+							<button onclick="agegarTablaIngresos()" id="plus-subtabla"
+								class="contenedor-tabla__plus">
+								<i class='bx bx-list-plus'></i>
+							</button>
+						</div>
+					</div>
+				</section>
+				<section class="contenedor-datos">
+					<div class="contenedor-datos__pasos">
+						<div class="paso">
+							<span>2</span>
+						</div>
+					</div>
+					<div id="contenedor-tablas-egresos" class="contenedor-datos__tabla">
+						<h2>Aquí puedes poner cuales son tus Egresos al mes:</h2>
+						<div class="contendor-tabla">
+							<div class="tabla">
+								<div class="tabla__celda">
+									<p>tus gastos</p>
+								</div>
+								<div class="tabla__celda">
+									<p>Monto</p>
+								</div>
+							</div>
+							<button onclick="agegarTablaIngresos(false)" id="plus-subtabla"
+								class="contenedor-tabla__plus">
+								<i class='bx bx-list-plus'></i>
+							</button>
+						</div>
+					</div>
+				</section>
+				<section class="resultados-datos">
+					<div class="resultados-datos__descripcion">
+						<div class="resultados-datos__pasos">
+							<div class="paso">
+								<span>3</span>
+							</div>
+						</div>
+						<div class="resultados-datos__info">
+							<p>Ogo calculó algunas cosas por ti, para darte un pequeño panorama de tu situación financiera acutal. <br>
+								<span class="resultados-datos__monto">Total de tus Ingresos:
+									<span id="imprimir-resultado-ingresos">0.</span>
+								</span> <br>
+								<span class="resultados-datos__monto">Total de tus gastos:
+									<span id="imprimir-resultado-egresos">0.</span>
+								</span>
+							</p>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<div class="resultado-datos-cuadro">
+				<p>El porcentaje de tu ingreso que destinas al gasto es de:</p>
+				<span id="porcentaje-gasto">0%</span>
+				<p>El porcentaje de tu ingreso que queda libre despues del gasto es de:</p>
+				<span id="porcentaje-libre">0%</span>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="footer__info">
+				<i class='bx bxs-copyright'></i>
+				<p>Diego Mauricio Delgado</p>
+			</div>
+			<div class="footer__redes-sociales">
+				<a href="https://github.com/DiegoDelgadoMao" target="_blank">
+					<i class='bx bxl-github'></i>
+				</a>
+				<a href="https://www.instagram.com/diegomauricio.delgadoe/?hl=es-la" target="_blank">
+					<i class='bx bxl-instagram'></i>
+				</a>
+			</div>
+		</footer>
+		<script src="./scripts/main.js"></script>
+		<script src="./scripts/elementosTabla.js"></script>
+	</body>
+</html>

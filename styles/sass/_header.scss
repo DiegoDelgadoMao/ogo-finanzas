@@ -1,0 +1,38 @@
+header{
+	width: 100%;
+	margin-bottom: 40px;
+	.logo-ogo{
+		cursor: pointer;
+		display: block;
+		width: 14rem;
+		margin: 0px auto 20px auto;
+		transform: scale(1);
+		transition-duration: 1s;
+		transition-timing-function: ease-out;
+		transition-property: transform;
+	}
+
+	.logo-ogo:hover{
+		transform: scale(1.1);
+		transition-duration: 1s;
+		transition-timing-function: ease-out;
+		transition-property: transform;
+	}
+	.intro-ogo{
+		width: 100%;
+		.intro-ogo__p{
+			width: 90%;
+			max-width: 552px;
+			font-size: 1.8rem;
+			font-weight: 500;
+			margin: auto;
+			text-align: justify;
+			color: $primer-color;
+			text-transform: uppercase;
+		}
+		img{
+			display: none;
+			width: 400px;
+		}
+	}
+}

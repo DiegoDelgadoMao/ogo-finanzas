@@ -1,0 +1,28 @@
+.footer{
+	width: 100%;
+	height: 80px;
+	display: grid;
+	place-items: center;
+	justify-items: center;
+	padding: 10px 0px 0px 0px;
+	background: $tercer-color;
+	margin-top: 40px;
+	&__info{
+		color: #fff;
+		font-size: 1.5rem;
+		p{
+			display: inline-block;
+			margin-left: 10px;
+		}
+	}
+	&__redes-sociales{
+		.bxl-github{
+			font-size: 3rem;
+			margin-right: 10px;
+			color: #fff;
+		}
+		.bxl-instagram{
+			@extend .bxl-github;
+		}
+	}
+}

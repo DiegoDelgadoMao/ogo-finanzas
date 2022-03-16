@@ -1,0 +1,20 @@
+$primer-color: #17224D;
+$segundo-color: #FFC647;
+$tercer-color: #5220DD;
+$cuarto-color: #17C6E9;
+$quinto-color: #CFDBD5;
+
+*,*::before,*::after{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	background-color: $quinto-color;
+	font-family: 'Raleway', sans-serif;
+}
