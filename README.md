@@ -1,4 +1,4 @@
-
+![](https://ogo-finanzas.netlify.app/assets/logo-ogo.png)
 ------------
 
 Es un proyecto para practicar **Javascript**. Formulas, números. la entrada de datos de usuarios.
