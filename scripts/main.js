@@ -53,8 +53,6 @@ function calcularEgresos (){
 	}
 }
 
-let x;
-
 function calculoFinanciero (){
 	let ingresoNeto = calcularIngresos();
 	let gastosMensuales = calcularEgresos();
@@ -65,15 +63,24 @@ function calculoFinanciero (){
 	let porcentajeLibre = ((gastosMensuales / ingresoNeto) - 1) * 100;
 	porcentajeLibre = Math.abs(porcentajeLibre).toFixed(2);
 
-	contenedorImprimirIngreso.textContent = ingresoNeto;
-	contenedorImprimirGastos.textContent = gastosMensuales;
+	if(isNaN(ingresoNeto) || isNaN(gastosMensuales)){
+		contenedorImprimirIngreso.textContent = 0;
+		contenedorImprimirGastos.textContent = 0;
+	}else{
+		contenedorImprimirIngreso.textContent = ingresoNeto;
+		contenedorImprimirGastos.textContent = gastosMensuales;
+	}
 
 	if(isNaN(porcentajeLibre) || isNaN(porcentajeGasto) ||
-	porcentajeGasto === 'Infinity' || porcentajeLibre === 'Infinity'){
+	porcentajeLibre === Infinity || porcentajeGasto === Infinity){
+
 		contenedorPorcentajeGasto.textContent = `0%`;
 		contenedorPorcentajeLibre.textContent = `0%`;
+
 	}else{
+
 		contenedorPorcentajeGasto.textContent = `${porcentajeGasto}%`;
 		contenedorPorcentajeLibre.textContent = `${porcentajeLibre}%`;
+
 	}
 }

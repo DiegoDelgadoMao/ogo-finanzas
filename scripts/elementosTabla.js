@@ -1,5 +1,4 @@
-
-let agegarTablaIngresos = (ingreso = true)=>{
+let agegarTablaIngresos = (ingreso)=>{
 	let fragmento = document.createDocumentFragment();
 
 	let contenedorSubtabla = document.createElement('DIV');
@@ -26,7 +25,7 @@ let agegarTablaIngresos = (ingreso = true)=>{
 
 			if(i === 0){
 				let pSubTabla = document.createElement('P');
-				pSubTabla.textContent = 'xxx';
+				pSubTabla.textContent = 'vivienda';
 
 				pSubTabla.setAttribute('contenteditable','true');
 				pSubTabla.classList.add('p-editable-right');
@@ -37,7 +36,7 @@ let agegarTablaIngresos = (ingreso = true)=>{
 				let input = document.createElement('INPUT');
 				input.classList.add('egresos-inputs');
 
-				input.setAttribute('placeholder','xxxx');
+				input.setAttribute('placeholder','1000');
 				input.setAttribute('type','number');
 				input.setAttribute('oninput','calculoFinanciero()')
 
@@ -51,29 +50,15 @@ let agegarTablaIngresos = (ingreso = true)=>{
 		contenedorTablasEgresos.appendChild(fragmento);
 
 		egresos = document.querySelectorAll('.egresos-inputs');
-		botonesDeletTablaEgresos = document.querySelectorAll('.contenedor-subtabla__delet--egresos');
 
-		// logica para elimnar tabla (falta por mejorar!!!!)
-		botonesDeletTablaEgresos.forEach(e=>{
-			e.addEventListener('click',()=>{
-				try {
-					let elementoAEliminar = e.parentNode;
-					let padre = elementoAEliminar.parentNode;
-					padre.removeChild(elementoAEliminar);
-					egresos = document.querySelectorAll('.egresos-inputs');
-					calculoFinanciero();
-				} catch (error) {
-				}
-			})
-		})
-	}else{
+	}else if(ingreso === true){
 		for(let i = 0; i < 2; i++){
 			let subTablaCelda = document.createElement('DIV');
 			subTablaCelda.classList.add('subtabla__celda');
 
 			if(i === 0){
 				let pSubTabla = document.createElement('P');
-				pSubTabla.textContent = 'xxx';
+				pSubTabla.textContent = 'Sueldo';
 
 				pSubTabla.setAttribute('contenteditable','true');
 				pSubTabla.classList.add('p-editable-right');
@@ -84,7 +69,7 @@ let agegarTablaIngresos = (ingreso = true)=>{
 				let input = document.createElement('INPUT');
 				input.classList.add('ingresos-inputs');
 
-				input.setAttribute('placeholder','xxxx');
+				input.setAttribute('placeholder','2000');
 				input.setAttribute('type','number');
 				input.setAttribute('oninput','calculoFinanciero()')
 
@@ -99,28 +84,35 @@ let agegarTablaIngresos = (ingreso = true)=>{
 		ingresos = document.querySelectorAll('.ingresos-inputs');
 
 		botonDeletTabla.classList.add('contenedor-subtabla__delet--ingresos');
-		botonesDeletTablaIngresos = document.querySelectorAll('.contenedor-subtabla__delet--ingresos');
-
-		// logica para elimnar tabla (falta por mejorar!!!!)
-		botonesDeletTablaIngresos.forEach(e=>{
-			e.addEventListener('click',()=>{
-				try {
-					let elementoAEliminar = e.parentNode;
-					let padre = elementoAEliminar.parentNode;
-					padre.removeChild(elementoAEliminar);
-					ingresos = document.querySelectorAll('.ingresos-inputs');
-					calculoFinanciero();
-				} catch (error) {
-				}
-			})
-		})
 	}
 
 	// logica para editar nombres de el lado izquierdo de la tabla
 
-	parrafosEditables = document.querySelectorAll('.p-editable-right');
+	let parrafosEditables = document.querySelectorAll('.p-editable-right');
 
-	parrafosEditables.forEach(e=>{
+	let botonesDeletTablaIngresos = document.querySelectorAll('.contenedor-subtabla__delet--ingresos');
+
+	let botonesDeletTablaEgresos = document.querySelectorAll('.contenedor-subtabla__delet--egresos');
+
+	elementosEscuchas({
+		botonesDeletTablaIngresos,
+		botonesDeletTablaEgresos,
+		parrafosEditables
+
+	})
+}
+
+let elementoEliminadoIngreso;
+let elementoEliminadoEgreso;
+let padreTablaIngresos = document.body.children[1].children[0].children[0].children[1]
+let padreTablaEgresos = document.body.children[1].children[0].children[1].children[1]
+
+function elementosEscuchas (objeto){
+	let textoEditable = objeto.parrafosEditables;
+	let botonesDeletTabla = objeto.botonesDeletTablaIngresos;
+	let botonesDeletTablaEgresos = objeto.botonesDeletTablaEgresos;
+
+	textoEditable.forEach(e=>{
 		e.addEventListener('keydown',()=>{
 			let textoElemento = e.textContent;
 			if(textoElemento.length > 12){
@@ -128,6 +120,30 @@ let agegarTablaIngresos = (ingreso = true)=>{
 				e.textContent = textoElemento.slice(0, 12)
 			}
 			e.setAttribute('contenteditable','true')
+		})
+	})
+
+	botonesDeletTabla.forEach(e=>{
+		e.addEventListener('click',()=>{
+			let elementoAEliminar = e.parentNode;
+			elementoEliminadoIngreso = elementoAEliminar;
+			if(padreTablaIngresos.contains(elementoEliminadoIngreso)){
+				padreTablaIngresos.removeChild(elementoAEliminar);
+			}
+			ingresos = document.querySelectorAll('.ingresos-inputs');
+			calculoFinanciero();
+		})
+	})
+
+	botonesDeletTablaEgresos.forEach(e=>{
+		e.addEventListener('click',()=>{
+			let elementoAEliminar = e.parentNode;
+			elementoEliminadoEgreso = elementoAEliminar;
+			if(padreTablaEgresos.contains(elementoEliminadoEgreso)){
+				padreTablaEgresos.removeChild(elementoAEliminar);
+			}
+			egresos = document.querySelectorAll('.egresos-inputs');
+			calculoFinanciero();
 		})
 	})
 }
