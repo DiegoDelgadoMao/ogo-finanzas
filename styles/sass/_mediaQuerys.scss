@@ -30,5 +30,48 @@
 	header .intro-ogo img{
 		width: 400px;
 	}
+	.intro-pasos{
+		grid-template-columns: minmax(300px,400px) minmax(300px,400px) minmax(300px,400px);
+		justify-content: center;
+	}
+	.contenedor-datos{
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		&__pasos{
+			width: 100%;
+			.paso{
+				margin: 0;
+				left: 0;
+			}
+		}
+		&__pasos::before{
+			content: none;
+		}
+		&__pasos::after{
+			content: " ";
+			width: 100%;
+			height: 0.2rem;
+			background: $primer-color;
+			position: absolute;
+			left: 0;
+			bottom: 50%;
+			z-index: 1;
+		}
+	}
+	.resultados-datos__pasos{
+		width: 100%;
+		.paso {
+			margin: 0;
+		}
+	}
+	.resultados-datos{
+		&__info{
+			margin-top: 20px;
+		}
+	}
+	.contenedor-datos .contenedor-datos__tabla{ 		width: 90%;
+		margin: 20px auto 0 auto;
+	}
 }
 

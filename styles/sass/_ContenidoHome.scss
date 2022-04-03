@@ -1,7 +1,12 @@
-.contenedor-datos{
+.intro-pasos{
 	width: 100%;
-	max-width: 500px;
-	margin: auto;
+	height: auto;
+	display: grid;
+	grid-template-columns: minmax(320px,500px);
+	justify-content: center;
+	grid-auto-rows: auto;
+}
+.contenedor-datos{
 	height: auto;
 	display: flex;
 	&__pasos{
@@ -38,7 +43,7 @@
 		margin: auto;
 		z-index: 1;
 	}
-	.contenedor-datos__tabla{
+	&__tabla{
 		padding: 0px 10px 30px 10px;
 		h2{
 			font-size: 1.5rem;

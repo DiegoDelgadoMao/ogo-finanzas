@@ -9,7 +9,7 @@ let agegarTablaIngresos = (ingreso)=>{
 
 	let inconoDelet = document.createElement('I');
 	inconoDelet.classList.add('bx');
-	inconoDelet.classList.add('bx-x');
+	inconoDelet.classList.add('bxs-trash');
 
 	let botonDeletTabla = document.createElement('BUTTON');
 	botonDeletTabla.classList.add('contenedor-subtabla__delet');

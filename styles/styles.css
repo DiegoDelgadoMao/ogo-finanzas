@@ -17,7 +17,13 @@ header {
   width: 100%;
   margin-bottom: 40px;
 }
-header .logo-ogo {
+header .link-logo-ogo {
+  margin: auto;
+  display: block;
+  height: auto;
+  width: 14rem;
+}
+header .link-logo-ogo .logo-ogo {
   cursor: pointer;
   display: block;
   width: 14rem;
@@ -40,21 +46,54 @@ header .intro-ogo .intro-ogo__p {
   width: 90%;
   max-width: 552px;
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 800;
   margin: auto;
   text-align: justify;
   color: #17224D;
   text-transform: uppercase;
+}
+header .intro-ogo .intro-ogo__link-button {
+  display: block;
+  text-decoration: none;
+  width: 20rem;
+  height: 4rem;
+  margin: auto;
+  margin-top: 2.4rem;
+}
+header .intro-ogo button {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #17224D;
+  background: #17C6E9;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+header .intro-ogo button i {
+  color: #17224D;
+  font-size: 2rem;
 }
 header .intro-ogo img {
   display: none;
   width: 400px;
 }
 
-.contenedor-datos, .resultados-datos__descripcion {
+.intro-pasos {
   width: 100%;
-  max-width: 500px;
-  margin: auto;
+  height: auto;
+  display: grid;
+  grid-template-columns: minmax(320px, 500px);
+  justify-content: center;
+  grid-auto-rows: auto;
+}
+
+.contenedor-datos, .resultados-datos {
   height: auto;
   display: flex;
 }
@@ -92,20 +131,20 @@ header .intro-ogo img {
   margin: auto;
   z-index: 1;
 }
-.contenedor-datos .contenedor-datos__tabla, .resultados-datos__descripcion .contenedor-datos__tabla {
+.contenedor-datos__tabla {
   padding: 0px 10px 30px 10px;
 }
-.contenedor-datos .contenedor-datos__tabla h2, .resultados-datos__descripcion .contenedor-datos__tabla h2 {
+.contenedor-datos__tabla h2 {
   font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 20px;
 }
-.contenedor-datos .contendor-tabla, .resultados-datos__descripcion .contendor-tabla, .contenedor-datos .contenedor-subtabla, .resultados-datos__descripcion .contenedor-subtabla {
+.contenedor-datos .contendor-tabla, .resultados-datos .contendor-tabla, .contenedor-datos .contenedor-subtabla, .resultados-datos .contenedor-subtabla {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.contenedor-datos .contendor-tabla .contenedor-tabla__plus, .resultados-datos__descripcion .contendor-tabla .contenedor-tabla__plus, .contenedor-datos .contenedor-subtabla .contenedor-tabla__plus, .resultados-datos__descripcion .contenedor-subtabla .contenedor-tabla__plus, .contenedor-datos .contenedor-subtabla .contenedor-subtabla__delet, .resultados-datos__descripcion .contenedor-subtabla .contenedor-subtabla__delet {
+.contenedor-datos .contendor-tabla .contenedor-tabla__plus, .resultados-datos .contendor-tabla .contenedor-tabla__plus, .contenedor-datos .contenedor-subtabla .contenedor-tabla__plus, .resultados-datos .contenedor-subtabla .contenedor-tabla__plus, .contenedor-datos .contenedor-subtabla .contenedor-subtabla__delet, .resultados-datos .contenedor-subtabla .contenedor-subtabla__delet {
   cursor: pointer;
   width: 3rem;
   height: 3rem;
@@ -115,17 +154,17 @@ header .intro-ogo img {
   display: grid;
   place-content: center;
 }
-.contenedor-datos .contendor-tabla .contenedor-tabla__plus .bx-list-plus, .resultados-datos__descripcion .contendor-tabla .contenedor-tabla__plus .bx-list-plus, .contenedor-datos .contenedor-subtabla .contenedor-tabla__plus .bx-list-plus, .resultados-datos__descripcion .contenedor-subtabla .contenedor-tabla__plus .bx-list-plus, .contenedor-datos .contenedor-subtabla .contenedor-subtabla__delet .bx-list-plus, .resultados-datos__descripcion .contenedor-subtabla .contenedor-subtabla__delet .bx-list-plus {
+.contenedor-datos .contendor-tabla .contenedor-tabla__plus .bx-list-plus, .resultados-datos .contendor-tabla .contenedor-tabla__plus .bx-list-plus, .contenedor-datos .contenedor-subtabla .contenedor-tabla__plus .bx-list-plus, .resultados-datos .contenedor-subtabla .contenedor-tabla__plus .bx-list-plus, .contenedor-datos .contenedor-subtabla .contenedor-subtabla__delet .bx-list-plus, .resultados-datos .contenedor-subtabla .contenedor-subtabla__delet .bx-list-plus {
   font-size: 2rem;
   color: #17C6E9;
 }
-.contenedor-datos .tabla, .resultados-datos__descripcion .tabla, .contenedor-datos .contenedor-subtabla .subtabla, .resultados-datos__descripcion .contenedor-subtabla .subtabla {
+.contenedor-datos .tabla, .resultados-datos .tabla, .contenedor-datos .contenedor-subtabla .subtabla, .resultados-datos .contenedor-subtabla .subtabla {
   width: 80%;
   display: grid;
   grid-template-columns: repeat(2, minmax(100px, 1fr));
   grid-auto-rows: 40px;
 }
-.contenedor-datos .tabla__celda, .resultados-datos__descripcion .tabla__celda, .contenedor-datos .contenedor-subtabla .subtabla__celda, .resultados-datos__descripcion .contenedor-subtabla .subtabla__celda {
+.contenedor-datos .tabla__celda, .resultados-datos .tabla__celda, .contenedor-datos .contenedor-subtabla .subtabla__celda, .resultados-datos .contenedor-subtabla .subtabla__celda {
   width: 100%;
   height: 100%;
   background: #FFC647;
@@ -134,12 +173,12 @@ header .intro-ogo img {
   justify-content: center;
   align-items: center;
 }
-.contenedor-datos .tabla__celda p, .resultados-datos__descripcion .tabla__celda p, .contenedor-datos .contenedor-subtabla .subtabla__celda p, .resultados-datos__descripcion .contenedor-subtabla .subtabla__celda p {
+.contenedor-datos .tabla__celda p, .resultados-datos .tabla__celda p, .contenedor-datos .contenedor-subtabla .subtabla__celda p, .resultados-datos .contenedor-subtabla .subtabla__celda p {
   font-size: 1.4rem;
   font-weight: 600;
   outline: none;
 }
-.contenedor-datos .contenedor-subtabla .subtabla input, .resultados-datos__descripcion .contenedor-subtabla .subtabla input {
+.contenedor-datos .contenedor-subtabla .subtabla input, .resultados-datos .contenedor-subtabla .subtabla input {
   width: 80%;
   display: block;
   height: 20px;
@@ -148,18 +187,18 @@ header .intro-ogo img {
   padding: 0px 4px;
   outline: none;
 }
-.contenedor-datos .contenedor-subtabla .subtabla input::placeholder, .resultados-datos__descripcion .contenedor-subtabla .subtabla input::placeholder {
+.contenedor-datos .contenedor-subtabla .subtabla input::placeholder, .resultados-datos .contenedor-subtabla .subtabla input::placeholder {
   color: #555;
 }
-.contenedor-datos .contenedor-subtabla .contenedor-subtabla__delet .bx, .resultados-datos__descripcion .contenedor-subtabla .contenedor-subtabla__delet .bx {
+.contenedor-datos .contenedor-subtabla .contenedor-subtabla__delet .bx, .resultados-datos .contenedor-subtabla .contenedor-subtabla__delet .bx {
   font-size: 2rem;
   color: #17C6E9;
 }
 
-.resultados-datos__descripcion .resultados-datos__pasos {
+.resultados-datos__pasos {
   width: 29%;
 }
-.resultados-datos__descripcion .resultados-datos__pasos .paso {
+.resultados-datos__pasos .paso {
   width: 3rem;
   height: 3rem;
   background: #17C6E9;
@@ -169,26 +208,26 @@ header .intro-ogo img {
   border: 1px solid #17224D;
   margin: auto;
 }
-.resultados-datos__descripcion .resultados-datos__pasos .paso span {
+.resultados-datos__pasos .paso span {
   font-size: 2.4rem;
   font-weight: 800;
   color: #FFC647;
   -webkit-text-stroke: 1px #17224D;
 }
-.resultados-datos__descripcion .resultados-datos__info {
+.resultados-datos__info {
   padding: 0px 10px;
 }
-.resultados-datos__descripcion .resultados-datos__info p {
+.resultados-datos__info p {
   width: 86%;
   font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 30px;
   text-align: justify;
 }
-.resultados-datos__descripcion .resultados-datos__info .resultados-datos__monto {
+.resultados-datos__info .resultados-datos__monto {
   font-weight: 600;
 }
-.resultados-datos__descripcion .resultados-datos__info .resultados-datos__monto span {
+.resultados-datos__info .resultados-datos__monto span {
   font-weight: 900;
   color: #5220DD;
 }
@@ -271,6 +310,53 @@ header .intro-ogo img {
 
   header .intro-ogo img {
     width: 400px;
+  }
+
+  .intro-pasos {
+    grid-template-columns: minmax(300px, 400px) minmax(300px, 400px) minmax(300px, 400px);
+    justify-content: center;
+  }
+
+  .contenedor-datos, .resultados-datos {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .contenedor-datos__pasos {
+    width: 100%;
+  }
+  .contenedor-datos__pasos .paso {
+    margin: 0;
+    left: 0;
+  }
+  .contenedor-datos__pasos::before {
+    content: none;
+  }
+  .contenedor-datos__pasos::after {
+    content: " ";
+    width: 100%;
+    height: 0.2rem;
+    background: #17224D;
+    position: absolute;
+    left: 0;
+    bottom: 50%;
+    z-index: 1;
+  }
+
+  .resultados-datos__pasos {
+    width: 100%;
+  }
+  .resultados-datos__pasos .paso {
+    margin: 0;
+  }
+
+  .resultados-datos__info {
+    margin-top: 20px;
+  }
+
+  .contenedor-datos .contenedor-datos__tabla, .resultados-datos .contenedor-datos__tabla {
+    width: 90%;
+    margin: 20px auto 0 auto;
   }
 }
 

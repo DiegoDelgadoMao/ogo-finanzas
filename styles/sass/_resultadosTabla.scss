@@ -1,6 +1,6 @@
-.resultados-datos__descripcion{
+.resultados-datos{
 	@extend .contenedor-datos;
-	.resultados-datos__pasos{
+	&__pasos{
 		width: 29%;
 		.paso{
 			width: 3rem;
@@ -19,7 +19,7 @@
 			}
 		}
 	}
-	.resultados-datos__info{
+	&__info{
 		padding: 0px 10px;
 		p{
 			width: 86%;

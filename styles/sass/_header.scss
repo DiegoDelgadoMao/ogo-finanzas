@@ -1,15 +1,21 @@
 header{
 	width: 100%;
 	margin-bottom: 40px;
-	.logo-ogo{
-		cursor: pointer;
+	.link-logo-ogo{
+		margin: auto;
 		display: block;
+		height: auto;
 		width: 14rem;
-		margin: 0px auto 20px auto;
-		transform: scale(1);
-		transition-duration: 1s;
-		transition-timing-function: ease-out;
-		transition-property: transform;
+		.logo-ogo{
+			cursor: pointer;
+			display: block;
+			width: 14rem;
+			margin: 0px auto 20px auto;
+			transform: scale(1);
+			transition-duration: 1s;
+			transition-timing-function: ease-out;
+			transition-property: transform;
+		}
 	}
 
 	.logo-ogo:hover{
@@ -24,11 +30,38 @@ header{
 			width: 90%;
 			max-width: 552px;
 			font-size: 1.8rem;
-			font-weight: 500;
+			font-weight: 800;
 			margin: auto;
 			text-align: justify;
 			color: $primer-color;
 			text-transform: uppercase;
+		}
+		.intro-ogo__link-button{
+			display: block;
+			text-decoration: none;
+			width: 20rem;
+			height: 4rem;
+			margin: auto;
+			margin-top: 2.4rem;
+		}
+		button{
+			cursor: pointer;
+			width: 100%;
+			height: 100%;
+			border: 1px solid $primer-color;
+			background: $cuarto-color;
+			border-radius: 6px;
+			color: #fff;
+			font-size: 1.3rem;
+			text-transform: uppercase;
+			font-weight: 800;
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			i{
+				color: $primer-color;
+				font-size: 2rem;
+			}
 		}
 		img{
 			display: none;
