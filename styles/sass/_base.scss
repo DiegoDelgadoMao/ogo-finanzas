@@ -1,12 +1,33 @@
-$primer-color: #17224D;
-$segundo-color: #FFC647;
-$tercer-color: #5220DD;
-$cuarto-color: #17C6E9;
-$quinto-color: #CFDBD5;
+// colors
+$first-color: #17224D;
+$second-color: #FFC647;
+$second-color-light: #FFDF97;
+$third-color: #AD00FF;
+$third-color-light: #A578BA;
+$fourth-color: #17C6E9;
+$fifth-color: #EEF4F1;
+
+// fonts
+
+$main-font: 'Josefin Slab', serif;
+$second-font:  'Righteous', cursive;
+
+// shadows
+
+$shadow-blue: 1px 1px 12px $fourth-color;
+
+$shadow-purple-light: 1px 1px 12px $third-color-light;
+
+$shadow-purple: 1px 1px 12px $third-color;
+
+$shadow-yellow: 1px 1px 12px $second-color;
+
+// styles base
+
 
 *,*::before,*::after{
-	margin: 0;
 	padding: 0;
+	margin: 0;
 	box-sizing: border-box;
 }
 
@@ -15,6 +36,7 @@ html{
 }
 
 body{
-	background-color: $quinto-color;
-	font-family: 'Raleway', sans-serif;
+	width: 100%;
+	font-family:  'Josefin Slab', serif;
+	background-color: $first-color;
 }

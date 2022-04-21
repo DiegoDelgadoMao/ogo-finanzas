@@ -1,0 +1,331 @@
+.ogo-content{
+	width: 100%;
+	height: auto;
+	display: grid;
+	grid-template-columns: minmax(320px,500px);
+	justify-content: center;
+	grid-auto-rows: auto;
+}
+.container-data{
+	width: 100%;
+	height: auto;
+	display: grid;
+	grid-template-columns: 5rem 1fr;
+	&__steps{
+		width: 100%;
+		position: relative;
+		.step{
+			width: 3rem;
+			height: 3rem;
+			display: grid;
+			place-content: center;
+			margin: auto;
+			border-radius: 50%;
+			background: $fourth-color;
+			box-shadow: $shadow-blue;
+			position: relative;
+			z-index: 2;
+			span{
+				font-size: 2.4rem;
+				font-weight: 800;
+				font-family: $second-font;
+				color: $second-color;
+				-webkit-text-stroke: 0.3px $first-color;
+			}
+		}
+	}
+	&__steps::before{
+		content: ' ';
+		width: 0.1rem;
+		height: 100%;
+		margin: auto;
+		background: $fifth-color;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+	}
+	&__table{
+		padding: 0px 10px 60px 10px;
+		h2{
+			margin-bottom: 20px;
+			font-size: 1.5rem;
+			font-weight: 500;
+			color: $fifth-color;
+		}
+	}
+	.container-table{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.container-table__add{
+		width: 3rem;
+		height: 3rem;
+		display: grid;
+		place-content: center;
+		border: none;
+		background: $fourth-color;
+		box-shadow: $shadow-blue;
+		cursor: pointer;
+		.ri-play-list-add-line{
+			font-size: 1.8rem;
+			color: $fifth-color;
+		}
+	}
+	.table{
+		width: 80%;
+		display: grid;
+		grid-template-columns: repeat(2,minmax(100px,1fr));
+		grid-auto-rows: 40px;
+		&__cell{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 1px solid $fifth-color;
+			background: $second-color;
+		}
+		p{
+			outline: none;
+			font-size: 1.3rem;
+			font-weight: 900;
+			font-family: $second-font;
+			text-transform: uppercase;
+		}
+	}
+	.container-row-aggregate{
+		@extend .container-table;
+		.row{
+			@extend .table;
+			&__cell{
+				@extend .table__cell;
+				background: transparent;
+			}
+			.paragraph-edit{
+				font-weight: bold;
+				color: $fifth-color;
+			}
+			input{
+				width: 80%;
+				height: 20px;
+				padding: 0px 4px;
+				display: block;
+				border: none;
+				outline: none;
+				color: $fifth-color;
+				background: transparent;
+			}
+			input::placeholder{
+				color: rgb(190, 185, 185)
+			}
+		}
+		.button-delet-row{
+			@extend .container-table__add;
+			.ri-delete-bin-5-fill{
+				font-size: 2rem;
+				color: $fifth-color;
+			}
+		}
+	}
+}
+
+// egresos
+
+.data-expenses{
+	overflow: scroll;
+}
+
+.container-table-expenses{
+	width: 100%;
+	display: grid;
+	justify-items: center;
+	gap: 30px;
+	padding: 0px 20px;
+	&__categories{
+		width: 60%;
+		height: 50px;
+		max-width: 500px;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+	.categories-expenses{
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		&__box{
+			width: 25px;
+			height: 25px;
+			border: 1px solid #fff;
+			background: $third-color-light;
+			box-shadow: $shadow-purple-light
+		}
+		&__box--2{
+			background: $second-color;
+			box-shadow: $shadow-yellow
+		}
+		&__box--3{
+			background: $fourth-color;
+			box-shadow: $shadow-blue
+		}
+		p{
+			font-size: 1.3rem;
+			font-weight: bold;
+			color: $fifth-color;
+		}
+	}
+}
+
+.container-rows-expenses{
+	width: 600px;
+	&__header-1{
+		height: 40px;
+		display: grid;
+		grid-template-columns: repeat(3,1fr) 50px;
+		.cell-header-row-1{
+			width: 100%;
+			height: 100%;
+			display: grid;
+			place-content: center;
+			border: 1px solid;
+			font-size: 1.5rem;
+			font-weight: 900;
+			font-family: $second-font;
+			text-transform: uppercase;
+			color: $fifth-color;
+		}
+	}
+}
+
+.container-rows-expenses__header-2{
+	display: grid;
+	grid-template-columns: 1fr 50px;
+	align-items: center;
+	.container-rows-header-2{
+		display: grid;
+		grid-template-columns: 7fr 5fr 2fr 5fr 2fr;
+		&__cell{
+			width: 100%;
+			height: 40px;
+			display: grid;
+			place-content: center;
+			border: 1px solid $fifth-color;
+			font-size: 1.5rem;
+			font-weight: 900;
+			font-family: $second-font;
+			text-transform: uppercase;
+			color: $first-color;
+			background: $second-color;
+		}
+		&__cell--empty{
+			background: transparent;
+		}
+	}
+	.boton-remove-fila-egreso{
+		width: 30px;
+		height: 30px;
+		display: grid;
+		place-content: center;
+		font-size: 2.5rem;
+		color: $first-color;
+		border: none;
+		background: $fourth-color;
+		box-shadow: $shadow-blue;
+		justify-self: center;
+		cursor: pointer
+	}
+	.ri-play-list-add-line{
+		font-size: 1.8rem;
+		color: $fifth-color;
+	}
+	.add-button-rows-expenses{
+		@extend .boton-remove-fila-egreso
+	}
+}
+
+.row-expenses{
+	@extend .container-rows-expenses__header-2;
+	.container-row-expenses{
+		@extend .container-rows-header-2;
+		&__cell{
+			@extend .container-rows-header-2__cell;
+			background: $second-color-light;
+			font-size: 1.4rem;
+			font-weight: 600;
+			text-transform: lowercase;
+		}
+		.container-fila-egresos__celda--porcentaje{
+			background: $second-color;
+		}
+		.select-categoies-container{
+			grid-template-columns: 60% 40%;
+			grid-auto-rows: 100%;
+			place-items: center;
+		}
+		.select-categoies-container__box{
+			position: relative;
+		}
+		.options-categories{
+			position: absolute;
+			width: 80px;
+			background: #a5b3ac;
+			height: 100px;
+			display: none;
+			grid-template-columns: 1fr;
+			grid-auto-rows: 1fr;
+			top: 22px;
+			left: -30px;
+			z-index: 2;
+		}
+		.options-categories__value{
+			width: 100%;
+			height: 100%;
+			border: 1px solid #fff;
+			display: grid;
+			place-items: center;
+			cursor: pointer;
+		}
+		.ri-price-tag-3-fill{
+			font-size: 2.2rem;
+			color: #a5b3ac;
+			-webkit-text-stroke: 1px $first-color;
+			cursor: pointer;
+		}
+
+		.tag-basic{
+			color: #a578ba;
+		}
+		.tag-luxe{
+			color: $second-color;
+		}
+		.tag-saving{
+			color: $fourth-color;
+		}
+		&__cell input{
+			width: 100%;
+			height: 100%;
+			display: block;
+			padding: 0px 10px;
+			border: none;
+			outline: none;
+			font-size: 1.4rem;
+			font-weight: 400;
+			color: $first-color;
+			background: transparent;
+		}
+		&__cell input::placeholder{
+			color: #404a72;
+		}
+	}
+	&__button-delet{
+		@extend .boton-remove-fila-egreso;
+		font-size: 2rem;
+		.ri-delete-bin-5-fill{
+			font-size: 2rem;
+			color: $fifth-color;
+		}
+	}
+}

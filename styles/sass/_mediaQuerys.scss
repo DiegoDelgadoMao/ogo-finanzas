@@ -5,15 +5,12 @@
 	}
 	header{
 		margin-bottom: 90px;
-		.intro-ogo{
-			width: 100%;
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			place-items: center;
-			img{
-				display: block;
-				width: 300px;
-			}
+	}
+	.home-ogo{
+		flex-direction: row;
+		margin-bottom: 60px;
+		img{
+			display: block;
 		}
 	}
 }
@@ -22,56 +19,22 @@
 	html{
 		font-size: 72%;
 	}
-	.intro-ogo{
+	.home-ogo{
 		width: 90%;
 		max-width: 1130px;
 		margin: auto;
-	}
-	header .intro-ogo img{
-		width: 400px;
-	}
-	.intro-pasos{
-		grid-template-columns: minmax(300px,400px) minmax(300px,400px) minmax(300px,400px);
-		justify-content: center;
-	}
-	.contenedor-datos{
-		height: auto;
-		display: flex;
-		flex-direction: column;
-		&__pasos{
-			width: 100%;
-			.paso{
-				margin: 0;
-				left: 0;
-			}
-		}
-		&__pasos::before{
-			content: none;
-		}
-		&__pasos::after{
-			content: " ";
-			width: 100%;
-			height: 0.2rem;
-			background: $primer-color;
-			position: absolute;
-			left: 0;
-			bottom: 50%;
-			z-index: 1;
+		margin-bottom: 60px;
+		img {
+			display: block;
+			width: 400px;
 		}
 	}
-	.resultados-datos__pasos{
-		width: 100%;
-		.paso {
-			margin: 0;
-		}
-	}
-	.resultados-datos{
-		&__info{
-			margin-top: 20px;
-		}
-	}
-	.contenedor-datos .contenedor-datos__tabla{ 		width: 90%;
+	.container-dataner .container-data__table{
+		width: 90%;
 		margin: 20px auto 0 auto;
+	}
+	.data-expenses{
+		overflow: visible;
 	}
 }
 

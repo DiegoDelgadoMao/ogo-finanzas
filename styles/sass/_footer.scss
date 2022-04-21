@@ -5,24 +5,31 @@
 	place-items: center;
 	justify-items: center;
 	padding: 10px 0px 0px 0px;
-	background: $tercer-color;
+	background: $fifth-color;
 	margin-top: 40px;
 	&__info{
-		color: #fff;
+		display: flex;
+		align-items: center;
+		color: $first-color;
 		font-size: 1.5rem;
+		font-weight: bold;
 		p{
+			font-family: $second-font;
 			display: inline-block;
 			margin-left: 10px;
 		}
 	}
 	&__redes-sociales{
-		.bxl-github{
-			font-size: 3rem;
-			margin-right: 10px;
-			color: #fff;
+		a{
+			text-decoration: none;
 		}
-		.bxl-instagram{
-			@extend .bxl-github;
+		.ri-github-fill{
+			font-size: 2.6rem;
+			margin-right: 10px;
+			color: $third-color;
+		}
+		.ri-instagram-fill{
+			@extend .ri-github-fill;
 		}
 	}
 }
