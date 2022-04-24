@@ -255,12 +255,12 @@ function calculateExpensesPorcentaje (){
 
 function claculateExpensesPorcentajeTight(){
 	let totalIncomes = sumValues('incomes-inputs');
-	console.log(totalIncomes)
 
 	if(totalIncomes > 0){
 		let inputsExpenses = document.querySelectorAll('.egresos-calculo-ajustado');
 
 		for(let i = 0; i < inputsExpenses.length; i++){
+			validationInput(inputsExpenses[i].value)
 			let valueInput = stringToNumber(inputsExpenses[i].value);
 
 			let printPorcentajeExpenses  = inputsExpenses[i].parentElement.nextSibling.firstChild;
